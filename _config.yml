@@ -5,17 +5,17 @@ highlighter: pygments
 # Site settings
 title: "David Stenbeck"
 description: > # this means to ignore newlines until "email:"
-   Thoughts and experiments.
+   Collected ramblings and experiments.
 
 email: david.stenbeck@gmail.com
 #blog logo
-logo: "/assets/images/df_logo.jpg"
+logo: "/assets/images/ds_logo.png"
 # blog cover
 cover: "/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg"
 
 name: 'David Stenbeck'
 author: 'David Stenbeck'
-author_image: "/assets/images/author.jpg"
+author_image: "/assets/images/author.png"
 
 paginate:	5
 
