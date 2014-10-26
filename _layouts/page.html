@@ -1,70 +1,98 @@
+---
+---
 <!DOCTYPE html>
 <html>
-<!--
-====================================================
-    __  ____  ______________  _______ ___    __ 
-   / / / /  |/  / ____/   \ \/ / ___//   |  / / 
-  / /_/ / /|_/ / /_  / /| |\  /\__ \/ /| | / /  
- / __  / /  / / __/ / ___ |/ /___/ / ___ |/ /___
-/_/ /_/_/  /_/_/   /_/  |_/_//____/_/  |_/_____/
-                                                     
-====================================================
-Owner Name: Hossain Mohammad Faysal
-Profile: https://www.facebook.com/hmfaysal
-Version: 1.1
-Description: Awesome dude, awesome life
-====================================================
--->
-<head>
-{% include head.html %}
-</head>
-<body class="post-template page" itemscope itemtype="http://schema.org/WebPage">
+  {% include head.html %}
+  <body itemscope itemtype="http://schema.org/Article">
+    {% include header.html %}
+    <main class="content" role="main">
+      <article class="post">
+        {% if page.image %}
+        <div class="article-image">
+          <div class="post-image-image" style="background-image: url({% if page.image %}{{ page.image }}{% endif %})">
+            Article Image
+          </div>
+          <div class="post-meta">
+            <h1 class="post-title">{{ page.title }}</h1>
+            <div class="cf post-meta-text">
+              <div class="author-image" style="background-image: url({{ site.author_image }})">Blog Logo</div>
+              <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ site.author }}</h4>
+            </div>
+            <div style="text-align:center">
+              <a href="#topofpage" class="topofpage"><i class="fa fa-angle-down"></i></a>
+            </div>
+          </div>
+        </div>
+        <script>
+          (function ($) {
+              "use strict";
 
-<main id="notepad-page-container" class="notepad-page-container" role="main">
-    
-    
-        <header class="notepad-page-header">
-            <div class="notepad-page-menu-header">
-                
-                    <a class="notepad-blog-logo" href="{{ site.url }}">
-                        <img src="{{ site.url }}/images/{{ site.logo }}" alt="Blog Logo">
-                    </a>
-                
-                
-                
-                <div class="notepad-blog-menu">      
-    <div class="notepad-mobile-menu show-for-small">
-        <a href="#"><i class="fa fa-bars"></i></a>
+              $(document).ready(function(){
+
+                  var $window = $(window),
+                      $image = $('.post-image-image');
+                  $window.on('scroll', function() {
+                      var top = $window.scrollTop();
+
+                      if (top < 0 || top > 1500) { return; }
+                      $image
+                          .css('transform', 'translate3d(0px, '+top/3+'px, 0px)')
+                          .css('opacity', 1-Math.max(top/700, 0));
+                  });
+                  $window.trigger('scroll');
+
+                  var height = $('.article-image').height();
+                      $('.post-content').css('padding-top', height + 'px');
+
+                  $(function() {
+                    $('a[href*=#]:not([href=#])').click(function() {
+                      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                        var target = $(this.hash);
+                        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                        if (target.length) {
+                          $('html,body').animate({
+                            scrollTop: target.offset().top
+                          }, 500);
+                          return false;
+                        }
+                      }
+                    });
+                  });
+
+              });
+
+          }(jQuery));
+        </script>
+        {% else %}
+        <div class="noarticleimage">
+          <div class="post-meta">
+            <h1 class="post-title">{{ page.title }}</h1>
+            <div class="cf post-meta-text">
+              <div class="author-image" style="background-image: url({{ page.author_image }})">Blog Logo</div>
+              <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ page.author }}</h4>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        {% endif %}
+        <section class="post-content">
+          <a name="topofpage"></a>
+          {{content}}
+        </section>
+        </div>
+      </article>
+    </main>
+    <div class="bottom-closer">
+      <div class="background-closer-image" {%if site.cover %} style="background-image: url({{ site.cover }})"{% endif %}>
+      Image
     </div>
-    <ul class="notepad-menu">
-        <li class="notepad-mobile-close-btn show-for-small text-right">
-            <a href="#"><i class="fa fa-times"></i></a>
-        </li>
-{% for link in site.links %}
-            <li>{% if link.external %}
-                    <a href="{{ link.url }}">{{ link.title }}</a>
-                {% else %}
-                    <a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a>
-                {% endif %} </li>
-{% endfor %}            
-           <li><a href="{{ site.url }}/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
-    </ul>
-</div>
-            </div>
-            <div class="notepad-page-title row">
-                <div class="small-12 columns">
-                    <h1>{{ page.title }}</h1>
-                </div>
-            </div>
-        </header>
-
-<article class="notepad-page-content">
-                    <div>{{ content }}</div>
-</article>
-        <div class="cf"></div>
-    {% include footer.html %}
-</main>
-
-{% include scripts.html %}  
-</body>
+    <div class="inner">
+      <h1 class="blog-title">{{ site.title }}</h1>
+      <h2 class="blog-description">{{ site.description }}</h2>
+      <a href="/" class="btn">Back to Overview</a>
+    </div>
+    </div>
+  </body>
 </html>
