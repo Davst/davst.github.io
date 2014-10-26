@@ -1,0 +1,17 @@
+{
+	"folders":
+	[
+		{
+			"path": "/Users/davidstenbeck/Code/davst.github.io"
+		}
+	],
+
+    "settings":
+    {
+        "Jekyll":
+        {
+            "posts_path": "/Users/davidstenbeck/Code/davst.github.io/_posts",
+            "drafts_path": "/Users/davidstenbeck/Code/davst.github.io/_drafts"
+        }
+    }
+}
