@@ -1,11 +1,10 @@
 ---
 layout: post
 title: Building something new
-date: {}
 published: true
 categories: jekyll update hosting
 tags: featured
-image: "/assets/article_images/2014-08-29-welcome-to-jekyll/desktop.jpg"
+image: "/assets/article_images/2014-10-26-building-something-new/lego.jpg"
 ---
 
 ##Gathering dust
