@@ -3,7 +3,7 @@ layout: post
 title: Building something new
 published: true
 categories: jekyll update hosting
-tags: featured
+tags:
 image: "/assets/article_images/2014-10-26-building-something-new/lego.jpg"
 ---
 
