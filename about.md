@@ -4,9 +4,7 @@ title: Hi my name is David and I craft beautiful experiences
 permalink: /about/
 ---
 
-Hello, my name is David Stenbeck. I'm a designer from Sweden.
-
-I believe in making the world a better place through design. I love crafting beautiful user experiences that change the world around us into a better place. I also have skills in branding, service design, marketing, video, and print design. So please do contact me lorem ipsum dolor sit amet, consectetur adipiscing elit. In fringilla, lacus at vestibulum semper, massa purus iaculis nunc, vitae tristique orci neque vitae urna. Suspendisse ornare hendrerit vehicula...
+Hey there, I'm a designer from Sweden and I believe in making the world a better place through design. I love crafting beautiful user experiences that change the world around us into a better place. I also have skills in branding, service design, marketing, video, and print design. So please do contact me lorem ipsum dolor sit amet, consectetur adipiscing elit. In fringilla, lacus at vestibulum semper, massa purus iaculis nunc, vitae tristique orci neque vitae urna. Suspendisse ornare hendrerit vehicula...
 
 **Ugh, are you bored yet? I am.**
 
