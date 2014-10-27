@@ -7,27 +7,51 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "about.md",
+			"settings":
+			{
+				"buffer_size": 2779,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 375.0,
+		"height": 269.0,
 		"selected_items":
 		[
 			[
-				"in",
+				"comm",
+				"Git: Commit"
+			],
+			[
+				"inst",
 				"Package Control: Install Package"
 			],
 			[
 				"git",
-				"Github: Blame"
+				"Package Control: Install Package"
+			],
+			[
+				"dra",
+				"Jekyll: New draft"
+			],
+			[
+				"jek",
+				"Jekyll: New draft"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
 			],
 			[
 				"install",
 				"Package Control: Install Package"
 			]
 		],
-		"width": 462.0
+		"width": 561.0
 	},
 	"console":
 	{
@@ -44,6 +68,13 @@
 	},
 	"file_history":
 	[
+		"/Users/davidstenbeck/Code/davst.github.io/_posts/2014-08-29-welcome-to-jekyll.markdown",
+		"/Users/davidstenbeck/Code/davst.github.io/_posts/2014-10-26-building-something-new.md",
+		"/Users/davidstenbeck/Code/davst.github.io/_drafts/2014-10-26-leaving-the-old.md",
+		"/Users/davidstenbeck/Code/davst.github.io/_includes/head.html",
+		"/Users/davidstenbeck/Code/davst.github.io/CNAME",
+		"/Users/davidstenbeck/Library/Application Support/Sublime Text 2/Packages/User/Markdown (Jekyll).sublime-settings",
+		"/Users/davidstenbeck/Code/davst.github.io/davst.github.io.sublime-project",
 		"/Users/davidstenbeck/Code/davidstenbeck.com/_includes/top2.html",
 		"/Users/davidstenbeck/Code/davidstenbeck.com/_config.yml",
 		"/Users/davidstenbeck/Code/hiqbot/package.json",
@@ -85,8 +116,35 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "about.md",
+					"settings":
+					{
+						"buffer_size": 2779,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1325,
+								1325
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jekyll/Syntaxes/Markdown (Jekyll).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -96,7 +154,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 33.0
 	},
 	"layout":
 	{
@@ -121,6 +179,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.git":
+	{
+		"height": 102.0
+	},
 	"replace":
 	{
 		"height": 0.0

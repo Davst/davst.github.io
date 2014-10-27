@@ -6,9 +6,115 @@
 </description>
     <link>http://davst.github.io/</link>
     <atom:link href="http://davst.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 27 Oct 2014 11:57:03 +0100</pubDate>
-    <lastBuildDate>Mon, 27 Oct 2014 11:57:03 +0100</lastBuildDate>
+    <pubDate>Mon, 27 Oct 2014 17:54:32 +0100</pubDate>
+    <lastBuildDate>Mon, 27 Oct 2014 17:54:32 +0100</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>Smart cropping using css</title>
+        <description>&lt;p&gt;&lt;em&gt;Photo credit: Philipp Rümmele&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;At lunch today there was a discussion on using responsive images in web projects and some challenges of wanting to display in a nice edge-to-edge manner which leaves the aspect ratio of the image area outside our control.&lt;/p&gt;
+
+&lt;p&gt;The question I got that inspired this post was:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Is there any good library or such that&amp;#39;ll let me decide the weighting of the featured photo so it&amp;#39;ll scale towards the important part?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I actually didn&amp;#39;t have a response to this at once, but I was determined to find it since the issue intrigued me.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s use this photo of a stunning view with a our beloved Eddie (this dude definitely needed a name) looking out over the mountains as an example of a image that&amp;#39;d we&amp;#39;d like to feature.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/article_images/2014-10-27-smart-cropping-without-js/samplePhoto.jpg&quot; alt=&quot;Say we have the following image, with a man looking out over a landscape.&quot;&gt;&lt;/p&gt;
+
+&lt;h3&gt;Basics&lt;/h3&gt;
+
+&lt;p&gt;We can achieve a responsive, awesomely moody full screen background using the following code:&lt;/p&gt;
+
+&lt;h3&gt;HTML&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+  &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;
+  &amp;lt;title&amp;gt;Smart cropping&amp;lt;/title&amp;gt;
+  &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;style.css&amp;quot;&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+  &amp;lt;div class=&amp;quot;coverImage&amp;quot;&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;CSS&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;body {
+  margin: 0px; /* Remove the extra margins */
+}
+
+.coverImage {
+  background: url(coverPhoto.jpg); /* Set our background photo */
+  min-width: 100vw; /* 100% of viewport width */
+  min-height: 100vh; /* 100% of viewport height */
+  background-size: cover; /* cover sizing is what helps us adapt the photo to the div size */
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;See demo &lt;a href=&quot;http://jsfiddle.net/davidstenbeck/oqLuek11/&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;However, if you play around with the fiddle above, you&amp;#39;ll discover that if the area available to display the image strays from the original aspect ratio we are likely to run into two problems. Either the man looking out over the view won&amp;#39;t be visible and we&amp;#39;ll lose alot of the point of the photo, or even worse, the man &lt;em&gt;and&lt;/em&gt; the closest mountaintop both will be outside the field of view and we&amp;#39;ll also lose depth in the photo as illustrated below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/article_images/2014-10-27-smart-cropping-without-js/samplePhoto-ratio.jpg&quot; alt=&quot;Either type of ratio change will introduce problems.&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;In comes Smart cropping&lt;/h2&gt;
+
+&lt;p&gt;The idea of smart cropping in responsive design is the ability to have a image adapt and follow a main focal point. this is a concern in responsive design where the area we aim to cover with an image can change in both size and aspect ratio.&lt;/p&gt;
+
+&lt;h3&gt;Awesome, how do we save Eddie?&lt;/h3&gt;
+
+&lt;p&gt;I had a look around on the Internet for some kind of project that was looking to accomplish this and found that a project named &lt;a href=&quot;https://github.com/adamdbradley/focal-point&quot;&gt;Focal Point&lt;/a&gt; was getting alot of attention. Focal Point is a CSS library that provides smart cropping, it is however focused on providing this for legacy browsers and thus it does have alot of bloat if you aren&amp;#39;t in need of an option that will work prior to &lt;em&gt;Internet Explorer 9&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Another interesting project is &lt;a href=&quot;https://github.com/jonom/jquery-focuspoint&quot;&gt;Focus Point&lt;/a&gt; (No chance for mixing these two up eh?). focus Point solves smart cropping with a js library requiring jQuery, so again there is the issue of some bloat, but if you want some nice fancy transitions and stuff this might interest you. (To his credit he does mention the method I&amp;#39;m suggesting as well and has done some analysis on how his methods weighting differs.)&lt;/p&gt;
+
+&lt;h3&gt;A clean and minimalist solution.&lt;/h3&gt;
+
+&lt;p&gt;Being a fan of the simple, I do feel that people tend to over-complicate this issue that can in fact be solved with one line of CSS.&lt;/p&gt;
+
+&lt;p&gt;Returning to the sample image, if we look at where we&amp;#39;d like to weight the focus when scaling this image it&amp;#39;d be on Eddie himself. I&amp;#39;d say we&amp;#39;d like to focus in the chest to waist area to make sure we&amp;#39;d get some cliff in the shot as well.&lt;/p&gt;
+
+&lt;p&gt;So we get the coordinates from this point and use them to calculate the percentage from the left and top edge.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/article_images/2014-10-27-smart-cropping-without-js/samplePhoto-crosshair.jpg&quot; alt=&quot;The crosshair (our weighting point) intersects at about x:437 y:289.&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;For width: 437 / 640 = 0.68 which gives us a weighting point 68% from the left edge of the photo.&lt;/p&gt;
+
+&lt;p&gt;For height: 289 / 427 = 0.68 again, meaning our weighting point is 68% from the top of the photo.&lt;/p&gt;
+
+&lt;p&gt;So, building on our above example, if we add the following line of CSS the image will automatically weight itself towards our target, without adding any bloat to our site.&lt;/p&gt;
+
+&lt;h3&gt;CSS&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;background-position: 68% 68%;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;See demo (with some tweaking of the weighting) &lt;a href=&quot;http://jsfiddle.net/davidstenbeck/u06gy3kp/&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;So this turned out to be a long post about a simple solution. The point here though, is that it was a valid question and one that illustrates the power of CSS3 and how things that we think may be very complex to achieve. I also am a big fan of the simple solutions when you find them and think they are worth the same attention that a complex one would have gotten. The third takeaway would be to feature the hard work of the two mentioned GitHub projects that have clearly gone way further in depth with this than I have and seem to have solved this decently for legacy software which to me is impressive.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 27 Oct 2014 00:00:00 +0100</pubDate>
+        <link>http://davst.github.io/css/responsive/images/2014/10/27/smart-cropping-without-js.html</link>
+        <guid isPermaLink="true">http://davst.github.io/css/responsive/images/2014/10/27/smart-cropping-without-js.html</guid>
+        
+        <category>featured</category>
+        
+        
+        <category>css</category>
+        
+        <category>responsive</category>
+        
+        <category>images</category>
+        
+      </item>
     
       <item>
         <title>Building something new</title>
