@@ -8,10 +8,10 @@
 	"buffers":
 	[
 		{
-			"file": "about.md",
+			"file": "_posts/2014-10-26-building-something-new.md",
 			"settings":
 			{
-				"buffer_size": 2779,
+				"buffer_size": 2185,
 				"line_ending": "Unix"
 			}
 		}
@@ -19,9 +19,13 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 269.0,
+		"height": 313.0,
 		"selected_items":
 		[
+			[
+				"new",
+				"Jekyll: New post"
+			],
 			[
 				"comm",
 				"Git: Commit"
@@ -68,6 +72,8 @@
 	},
 	"file_history":
 	[
+		"/Users/davidstenbeck/Code/davst.github.io/about.md",
+		"/Users/davidstenbeck/Code/davst.github.io/_posts/2014-10-27-responsive-cropping-without-js.md",
 		"/Users/davidstenbeck/Code/davst.github.io/_posts/2014-08-29-welcome-to-jekyll.markdown",
 		"/Users/davidstenbeck/Code/davst.github.io/_posts/2014-10-26-building-something-new.md",
 		"/Users/davidstenbeck/Code/davst.github.io/_drafts/2014-10-26-leaving-the-old.md",
@@ -121,18 +127,18 @@
 			[
 				{
 					"buffer": 0,
-					"file": "about.md",
+					"file": "_posts/2014-10-26-building-something-new.md",
 					"settings":
 					{
-						"buffer_size": 2779,
+						"buffer_size": 2185,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1325,
-								1325
+								102,
+								102
 							]
 						],
 						"settings":
